@@ -7,23 +7,24 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Nanum+Myeongjo&family=Noto+Sans+KR:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
     <title>한국 문화</title>
 </head>
 <body>
 
     <header>
-        <img src="media/logo.png" alt=""> <button id="login">Log in / 로그인</button> <button id="cad">Cadastrar-se / 회원가입</button>
+        <img src="media/logo.png" alt="" onclick="window.location.href = 'index.html'"> <button id="login">Log in / 로그인</button> <button id="cad">Cadastrar-se / 회원가입</button>
     </header>
 
     <nav>
-        <a href="#" class="topics">História</a>
-        <a href="#" class="topics">Comida e Gastronomia</a>
-        <a href="#" class="topics">Arte e Música</a>
-        <a href="#" class="topics">Vestuário Tradicional</a>
-        <a href="#" class="topics">Festivais e Celebrações</a>
-        <a href="#" class="topics">Esportes e Artes Marciais</a>
+        <a href="html/hist.html" class="topics" id="hist" data-hover="역사">História</a>
+        <a href="html/food.html" class="topics" id="food" data-hover="음식과 요리">Comida e Gastronomia</a>
+        <a href="html/art.html" class="topics" id="art" data-hover="예술과 음악">Arte e Música</a>
+        <a href="html/clothes.html" class="topics" id="clothes" data-hover="전통 의상">Vestuário Tradicional</a>
+        <a href="html/celeb.html" class="topics" id="celeb" data-hover="축제와 행사">Festivais e Celebrações</a>
+        <a href="html/sports.html" class="topics" id="sports" data-hover="스포츠와 무술">Esportes e Artes Marciais</a>
+        <a href="html/quiz.html" class="topics" id="quiz" data-hover="퀴즈">Quiz</a>
     </nav>
 
     <div class="wrap"> <!-- hero section -->
@@ -33,16 +34,42 @@
             </video>
         </div>
         
-        <div class="translucent-box"></div>
+        <div class="translucent-box">
+            APRENDENDO MAIS SOBRE A CULTURA DA COREIA!!! <br>
+            한국 문화에 대해 더 알아가기!!!
+        </div>
     </div> <!-- end of hero section -->
 
     <main>
-        
+        <div class="title-artigo-container">
+            <section class="title-artigo">
+                Mergulhe na Cultura Coreana
+            </section>
+
+            <section class="title-artigo">
+                한국 문화에 빠져보세요
+            </section>
+        </div>
+
+        <div class="texto-index-container">
+            <article class="texto-index" id="article-esq">
+                <p>A Coreia é um país que encanta o mundo com sua riquíssima tradição e impressionante modernidade, onde valores milenares e tendências contemporâneas convivem em harmonia. Este site foi criado para apresentar a você os muitos lados dessa cultura fascinante, abordando sua história, culinária, expressões artísticas, músicas, esportes, roupas típicas e as celebrações e festivais que dão vida à sociedade coreana.</p>
+
+                <p>Ao navegar pelas páginas, será possível conhecer desde os eventos históricos que moldaram a identidade coreana, passando pelo sabor único de pratos tradicionais, pelas delicadas formas de arte e música que unem passado e presente, pelos esportes que conquistaram relevância mundial, até as belas vestimentas e rituais tradicionais preservados em cada festival. Sejam bem-vindos a essa viagem, onde cada detalhe revela um pouco mais do coração da Coreia do Sul e seu povo hospitaleiro e inovador.</p>
+            </article>
+
+            <article class="texto-index" id="article-dir">
+                <p>한국은 풍부한 전통과 놀라운 현대성이 조화를 이루며 세계를 매혹하는 나라입니다. 수천 년의 가치와 현대적 트렌드가 공존하는 이곳에서, 이 웹사이트는 한국 문화의 다채로운 면모를 소개합니다. 역사, 음식, 예술적 표현, 음악, 스포츠, 전통 의상, 그리고 한국 사회에 활력을 불어넣는 축제와 행사까지 아우릅니다.</p>
+
+                <p>이 페이지를 둘러보시면 한국인의 정체성을 형성한 역사적 사건부터 전통 요리의 독특한 맛, 과거와 현재를 잇는 섬세한 예술과 음악, 세계적으로 주목받는 스포츠, 그리고 각 축제마다 보존된 아름다운 전통 의상과 의식까지 만나보실 수 있습니다. 한국의 마음과 친절하고 혁신적인 국민을 조금씩 더 드러내는 이 여정에 여러분을 환영합니다.</p>
+            </article>
+        </div>
     </main>
 
     <footer>
         <p>Kdura M. &copy; 2024</p>
     </footer>
 
+    <script src="js/nav-hover.js"></script>
 </body>
 </html>
