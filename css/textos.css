@@ -1,0 +1,151 @@
+.title-artigo-container{
+    margin-top: 20px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.title-artigo{
+    margin-left: 1vw;
+    text-shadow: #616161 2px 2px 5px;
+    z-index: 1001;
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 700;
+    color: #CD2E3A;
+    display: flex;
+    justify-content: flex-start;
+}
+
+main{
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 70px;
+    margin-top: 80px;
+    padding-top: 0;
+}
+
+hr{
+    border: none;
+    border-top: 2px solid #0047A0;
+    margin: 40px 0 40px 0;
+}
+
+.texto-index-container{
+    justify-content: center;
+    margin-top: -40px;
+    width: 100%;
+}
+
+.texto-index{
+    width: 100%;
+    padding: 40px;
+    z-index: 1000;
+    display: block;
+    align-items: initial;
+    justify-content: initial;
+}
+
+.texto-index p{
+    font-size: 20px;
+    font-family: "Nanum Myeongjo", serif;
+}
+
+.texto-index strong{
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 800;
+    color: #0047A0;
+}
+
+.texto-index h1{
+    font-size: 28px;
+    font-family: "Noto Sans KR", sans-serif;
+    color: #0047A0;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-shadow: #616161 2px 2px 5px;
+}
+
+.texto-index h1,
+.texto-index h2 {
+  clear: both;
+  margin-top: 32px;
+}
+
+.texto-index h2{
+    font-family: "Noto Sans KR", sans-serif;
+    color: #CD2E3A;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-shadow: #616161 2px 2px 5px;
+}
+
+.texto-index hr {
+  clear: both;
+}
+
+.texto-index ul {
+    margin-left: 50px;
+    margin-bottom: 15px;
+    color: #03295e;
+}
+
+.texto-index li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.texto-index .text-imgs-left{
+    width: 260px;
+    height: auto;
+    float: left;
+    margin: 0px 20px 0px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.texto-index .text-imgs-right{
+    width: 260px;
+    height: auto;
+    float: right;
+    margin: 0px 20px 0px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+#gugak-img, #arte-img, #buchaechum-img, 
+#hanbok-img, #hanbok-moder-img{
+    width: 340px;
+    margin: 0px 20px 20px 0px;
+}
+
+#seollal-img, #chuseok-img, #yeondeunhoe-img,
+#jinju-img, #kpop-img{
+    width: 400px;
+    margin: -10px 20px 20px 0px;
+}
+
+#taekwondo-img{
+    width: 350px;
+    margin: 0px 20px 20px 0px;
+}
+
+#arco-img, #golf-img{
+    width: 350px;
+    margin-right: 80px;
+}
+
+#seul-img{
+    height: 230px;
+    width: auto;
+}
+
+.texto-index .text-imgs-food{
+    width: 420px;
+    height: auto;
+    float: left;
+    margin: 0px 20px 0px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
