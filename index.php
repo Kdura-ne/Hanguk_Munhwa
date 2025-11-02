@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -14,17 +15,23 @@
 <body>
 
     <header>
-        <img src="media/logo.png" alt="" onclick="window.location.href = 'index.html'"> <button id="login" onclick="window.location.href = 'html/login.html'">Log in / 로그인</button> <button id="cad" onclick="window.location.href = 'html/cad.html'">Cadastrar-se / 회원가입</button>
+        <img src="media/logo.png" alt="" onclick="window.location.href = 'index.php'"> 
+        <?php if (isset($_SESSION['userId'])) { ?>
+            <button id="logout" onclick="window.location.href = 'php/logout.php'">Log out / 로그아웃</button>
+        <?php } else { ?>
+            <button id="login" onclick="window.location.href = 'html/login.php'">Log in / 로그인</button> 
+            <button id="cad" onclick="window.location.href = 'html/cad.php'">Cadastrar-se / 회원가입</button>
+        <?php } ?>
     </header>
 
     <nav>
-        <a href="html/hist.html" class="topics" id="hist" data-hover="역사">História</a>
-        <a href="html/food.html" class="topics" id="food" data-hover="음식과 요리">Comida e Gastronomia</a>
-        <a href="html/art.html" class="topics" id="art" data-hover="예술과 음악">Arte e Música</a>
-        <a href="html/clothes.html" class="topics" id="clothes" data-hover="전통 의상">Vestuário Tradicional</a>
-        <a href="html/celeb.html" class="topics" id="celeb" data-hover="축제와 행사">Festivais e Celebrações</a>
-        <a href="html/sports.html" class="topics" id="sports" data-hover="스포츠와 무술">Esportes e Artes Marciais</a>
-        <a href="html/quiz.html" class="topics" id="quiz" data-hover="퀴즈">Quiz</a>
+        <a href="html/hist.php" class="topics" id="hist" data-hover="역사">História</a>
+        <a href="html/food.php" class="topics" id="food" data-hover="음식과 요리">Comida e Gastronomia</a>
+        <a href="html/art.php" class="topics" id="art" data-hover="예술과 음악">Arte e Música</a>
+        <a href="html/clothes.php" class="topics" id="clothes" data-hover="전통 의상">Vestuário Tradicional</a>
+        <a href="html/celeb.php" class="topics" id="celeb" data-hover="축제와 행사">Festivais e Celebrações</a>
+        <a href="html/sports.php" class="topics" id="sports" data-hover="스포츠와 무술">Esportes e Artes Marciais</a>
+        <a href="html/quiz.php" class="topics" id="quiz" data-hover="퀴즈">Quiz</a>
     </nav>
 
     <div class="wrap"> <!-- hero section -->
@@ -69,7 +76,24 @@
     <footer>
         <p>Kdura M. &copy; 2024</p>
     </footer>
-
+    <?php
+    if (isset($_SESSION['msg_id'])) {
+        switch ($_SESSION['msg_id']) {
+            case 5:
+                echo "<script>alert('Senha Incorreta.');</script>";
+                unset($_SESSION['msg_id']);
+                break;
+            case 6:
+                echo "<script>alert('Email não cadastrado.');</script>";
+                unset($_SESSION['msg_id']);
+                break;
+            case 7:
+                echo "<script>alert('Login realizado com sucesso!');</script>";
+                unset($_SESSION['msg_id']);
+                break;
+        }
+        unset($_SESSION['msg_id']);
+    } ?>
     <script src="js/nav-hover.js"></script>
 </body>
 </html>

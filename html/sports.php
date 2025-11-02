@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -15,17 +16,23 @@
 <body>
 
     <header>
-        <img src="../media/logo.png" alt="" onclick="window.location.href = '../index.html'"> <button id="login" onclick="window.location.href = 'login.html'">Log in / 로그인</button> <button id="cad" onclick="window.location.href = 'cad.html'">Cadastrar-se / 회원가입</button>
+        <img src="../media/logo.png" alt="" onclick="window.location.href = '../index.php'">
+        <?php if (isset($_SESSION['userId'])) { ?>
+            <button id="logout" onclick="window.location.href = '../php/logout.php'">Log out / 로그아웃</button>
+        <?php } else { ?>
+            <button id="login" onclick="window.location.href = 'login.php'">Log in / 로그인</button>
+            <button id="cad" onclick="window.location.href = 'cad.php'">Cadastrar-se / 회원가입</button>
+        <?php } ?>
     </header>
 
     <nav>
-        <a href="hist.html" class="topics" id="hist" data-hover="역사">História</a>
-        <a href="food.html" class="topics" id="food" data-hover="음식과 요리">Comida e Gastronomia</a>
-        <a href="art.html" class="topics" id="art" data-hover="예술과 음악">Arte e Música</a>
-        <a href="clothes.html" class="topics" id="clothes" data-hover="전통 의상">Vestuário Tradicional</a>
-        <a href="celeb.html" class="topics" id="celeb" data-hover="축제와 행사">Festivais e Celebrações</a>
-        <a href="sports.html" class="topics" id="sports" data-hover="스포츠와 무술">Esportes e Artes Marciais</a>
-        <a href="quiz.html" class="topics" id="quiz" data-hover="퀴즈">Quiz</a>
+        <a href="hist.php" class="topics" id="hist" data-hover="역사">História</a>
+        <a href="food.php" class="topics" id="food" data-hover="음식과 요리">Comida e Gastronomia</a>
+        <a href="art.php" class="topics" id="art" data-hover="예술과 음악">Arte e Música</a>
+        <a href="clothes.php" class="topics" id="clothes" data-hover="전통 의상">Vestuário Tradicional</a>
+        <a href="celeb.php" class="topics" id="celeb" data-hover="축제와 행사">Festivais e Celebrações</a>
+        <a href="sports.php" class="topics" id="sports" data-hover="스포츠와 무술">Esportes e Artes Marciais</a>
+        <a href="quiz.php" class="topics" id="quiz" data-hover="퀴즈">Quiz</a>
     </nav>
 
     <div class="wrap"> <!-- hero section -->
