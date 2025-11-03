@@ -1,8 +1,9 @@
-<?php
+﻿<?php
 session_start();
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST['email'];
-    $senha = $_POST['senha'];
+    $email = trim($_POST['email']);
+    $senha = trim($_POST['senha']);
 
     require_once 'connexion.php';
 
@@ -12,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->execute();
     $stmt->store_result();
 
-    if ($stmt->num_rows > 0) {
+    if  ($stmt->num_rows > 0) {
         $stmt->bind_result($userId, $hashedSenha);
         $stmt->fetch();
 
@@ -25,12 +26,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             // senha incorreta :(
             $_SESSION['msg_id'] = 5;
-            header("Location: ../html/login.php");
+            header("Location: ../pages/login.php");
         }
     } else {
         // email n cadastrado
         $_SESSION['msg_id'] = 6;
-        header("Location: ../html/login.php");
+        header("Location: ../pages/login.php");
     }
 
     $stmt->close();

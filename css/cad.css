@@ -35,13 +35,12 @@
     color: #0a0e2cc7;
 }
 
-/* Inputs */
 .form-group input {
     padding: 12px 16px;
     font-size: 16px;
     font-family: "Noto Sans", sans-serif;
     border: 2px solid #e0e0e0;
-    border-radius: 8px;
+    border-radius: 10px;
     transition: all 0.3s ease;
     outline: none;
 }
@@ -56,7 +55,6 @@
     font-size: 14px;
 }
 
-/* Botão de submit */
 .btn-submit {
     padding: 14px 24px;
     font-size: 16px;
@@ -65,15 +63,16 @@
     background-color: #CD2E3A;
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
     margin-top: 10px;
+    box-shadow: 0 6px 18px rgba(205,46,58,0.18);
 }
 
 .btn-submit:hover {
     background-color: #a82530;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
     box-shadow: 0 4px 12px rgba(205, 46, 58, 0.3);
 }
 
@@ -81,7 +80,24 @@
     transform: translateY(0);
 }
 
-/* Rodapé do formulário */
+.btn-reset{
+    width: 80px;
+    padding: 14px 24px;
+    font-size: 12px;
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 700;
+    background-color: #04204a;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 6px 18px rgba(205,46,58,0.18);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .form-footer {
     text-align: center;
     margin-top: 20px;
@@ -100,3 +116,162 @@
     color: #CD2E3A;
     text-decoration: underline;
 }
+
+/* Quiz styles start */
+.quiz-container {
+    width: 60vw;
+    margin: 30px auto;
+    padding: 28px;
+    background: rgba(255,255,255,0.97);
+    border-radius: 14px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
+.quiz-title {
+    font-family: "Noto Sans KR", sans-serif;
+    color: #0047A0;
+    font-size: 35px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.quiz-instructions {
+    text-align: center;
+    color: #0a0e2cc7;
+    margin-bottom: 18px;
+    font-size: 17.5px;
+}
+
+.questions-list {
+    list-style: none;
+    counter-reset: q;
+    padding-left: 0;
+    margin: 0;
+}
+
+.question {
+    margin-bottom: 16px;
+    padding: 12px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgba(0,71,160,0.02), transparent 60%);
+    border: 1px solid rgba(0,71,160,0.04);
+}
+
+.question fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.question legend {
+    font-weight: 700;
+    color: #03295e;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.options label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.08s ease;
+    color: #04204a;
+    font-size: 18px;
+    border: 1px solid transparent;
+}
+
+.options input[type="radio"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid #cfcfcf;
+    display: inline-block;
+    position: relative;
+    margin: 0 8px 0 0;
+    vertical-align: middle;
+    background: transparent;
+    box-sizing: border-box;
+}
+
+.options input[type="radio"]::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    transition: background .12s ease;
+}
+
+.options input[type="radio"]:checked {
+    border-color: #0047A0;
+}
+.options input[type="radio"]:checked::after {
+    background: #0047A0;
+}
+
+.options label:hover {
+    background: rgba(0,71,160,0.03);
+}
+
+/* Quiz styles end */
+
+/* Quiz results styles start */
+.quiz-container .options label.correct {
+    background: rgba(40,167,69,0.08);
+    border-color: rgba(40,167,69,0.28);
+    color: #165b2b;
+}
+.quiz-container .options label.correct input[type="radio"] {
+    border-color: #28a745;
+}
+.quiz-container .options label.correct input[type="radio"]::after {
+    background: #28a745;
+}
+
+.quiz-container .options label.incorrect {
+    background: rgba(205,46,58,0.08);
+    border-color: rgba(205,46,58,0.28);
+    color: #7a2726;
+}
+.quiz-container .options label.incorrect input[type="radio"] {
+    border-color: #d9534f;
+}
+.quiz-container .options label.incorrect input[type="radio"]::after {
+    background: #d9534f;
+}
+
+.quiz-container .options label.neutral-correct {
+    background: rgba(40,167,69,0.05);
+    border-color: rgba(40,167,69,0.14);
+    color: #165b2b;
+}
+.quiz-container .options label.neutral-correct input[type="radio"] {
+    border-color: #28a745;
+}
+.quiz-container .options label.neutral-correct input[type="radio"]::after {
+    background: transparent;
+    box-shadow: 0 0 0 3px rgba(40,167,69,0.06) inset;
+}
+
+.quiz-container .options input[type="radio"] {
+    background: transparent;
+}
+
+/* Quiz results styles end */

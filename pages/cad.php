@@ -1,5 +1,5 @@
 <?php
-session_start();
+    session_start();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -33,7 +33,15 @@ session_start();
         <a href="clothes.php" class="topics" id="clothes" data-hover="전통 의상">Vestuário Tradicional</a>
         <a href="celeb.php" class="topics" id="celeb" data-hover="축제와 행사">Festivais e Celebrações</a>
         <a href="sports.php" class="topics" id="sports" data-hover="스포츠와 무술">Esportes e Artes Marciais</a>
-        <a href="quiz.php" class="topics" id="quiz" data-hover="퀴즈">Quiz</a>
+        <div class="nav-dropdown">
+            <button class="topics dropdown-toggle" id="quiz-toggle" aria-expanded="false" aria-haspopup="true" data-hover="퀴즈">
+                Quiz
+            </button>
+            <ul class="dropdown-menu" id="quiz-menu" role="menu" aria-labelledby="quiz-toggle">
+                <li role="none"><a role="menuitem" href="quiz.php">Fazer Quiz / 퀴즈 풀기</a></li>
+                <li role="none"><a role="menuitem" href="quiz_result.php">Resultado / 결과</a></li>
+            </ul>
+        </div>
     </nav>
 
     <div class="wrap"> <!-- hero section -->
@@ -93,7 +101,8 @@ session_start();
                 echo "<script>alert('Email já cadastrado.');</script>";
                 break;
             case 2:
-                echo "<script>alert('As senhas não coincidem.');</script>";
+                echo "<script>
+                alert('As senhas não coincidem.');</script>";
                 break;
             case 3:
                 echo "<script>alert('Erro ao cadastrar.');</script>";
@@ -105,6 +114,8 @@ session_start();
         unset($_SESSION['msg_id']);
     }
     ?>
+
+    <script src="../js/nav-dropdown.js"></script>
     <script src="../js/nav-hover.js"></script>
 </body>
 </html>
