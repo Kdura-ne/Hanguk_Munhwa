@@ -1,0 +1,60 @@
+.aviso-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 16px;
+    box-sizing: border-box;
+    width: 90vw;
+    height: 70vh;
+}
+
+.aviso-box {
+    width: 80%;
+    height: 80%;
+    background: rgba(255,255,255,0.98);
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: 0 14px 40px rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,0.04);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.aviso-box h2 {
+    font-family: "Noto Sans KR", sans-serif;
+    color: #03295e;
+    font-size: 70px;
+    margin: 0 0 8px;
+}
+
+.aviso-box p {
+    color: #133057;
+    font-size: 30px;
+    margin: 8px 0 18px;
+}
+
+.aviso-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.btn-aviso {
+    display: inline-block;
+    padding: 10px 18px;
+    background: #0047A0;
+    color: #fff;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 700;
+    box-shadow: 0 6px 18px rgba(0,71,160,0.14);
+}
+
+.btn-aviso:hover {
+    transform: translateY(-3px);
+    background: #003875;
+}

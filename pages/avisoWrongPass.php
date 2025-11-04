@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/cad.css">
+    <link rel="stylesheet" href="../css/avisos.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,50 +45,15 @@
         </div>
     </nav>
 
-    <div class="wrap"> <!-- hero section -->
-        <div class="bg-video">
-            <video autoplay loop muted>
-                <source src="../media/quiz.mp4" type="video/mp4">
-            </video>
-        </div>
-        
-        <div class="translucent-box">
-            Hora de testar seus conhecimentos!!<br>
-            지식을 테스트할 시간입니다!!
-        </div>
-    </div> <!-- end of hero section -->
-
     <main>
-        <div class="form-container">
-            <h1 class="form-title">Cadastro / 회원가입</h1>
-            
-            <form class="signup-form" action="../php/cadastro.php" method="POST">
-                <div class="form-group">
-                    <label for="nome">Nome / 이름</label>
-                    <input type="text" id="nome" name="nome" required placeholder="Digite seu nome">
+        <div class="aviso-wrap">
+            <div class="aviso-box" role="status" aria-live="polite">
+                <h2>AVISO</h2>
+                <p>A senha não coincide com a confirmação.</p>
+                <div class="aviso-actions">
+                    <a class="btn-aviso" href="cad.php">Voltar para cadastro</a>
                 </div>
-
-                <div class="form-group">
-                    <label for="nickname">Nome de usuário / 사용자 이름</label>
-                    <input type="text" id="nickname" name="nickname" required placeholder="Digite seu nome de usuário">
-                </div>
-
-                <div class="form-group">
-                    <label for="senha">Senha / 비밀번호</label>
-                    <input type="password" id="senha" name="senha" required placeholder="Mínimo 6 caracteres">
-                </div>
-
-                <div class="form-group">
-                    <label for="confirmar-senha">Confirmar Senha / 비밀번호 확인</label>
-                    <input type="password" id="confirmar-senha" name="confirmar-senha" required placeholder="Repita sua senha">
-                </div>
-
-                <button type="submit" class="btn-submit">Cadastrar / 가입하기</button>
-                
-                <p class="form-footer">
-                    Já tem uma conta? <a href="login.php">Faça login / 로그인</a>
-                </p>
-            </form>
+            </div>
         </div>
     </main>
 

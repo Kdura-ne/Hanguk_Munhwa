@@ -1,4 +1,6 @@
 <?php
+ob_start();
+
 session_start();
 
 if($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -47,5 +49,6 @@ $_SESSION['userAnswers'] = $userAnswers;
 $_SESSION['Success'] = 'Prova enviada com sucesso!';
 
 header('Location: ../pages/quiz_result.php');
-exit;
+exit();
+ob_end_flush();
 ?>

@@ -1,4 +1,6 @@
 ﻿<?php
+ob_start();
+
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -19,21 +21,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if (password_verify($senha, $hashedSenha)) {
             // tudo deu certo :)
-            $_SESSION['msg_id'] = 7;
             $_SESSION['userId'] = $userId;
             header("Location: ../index.php");
             exit();
         } else {
             // senha incorreta :(
-            $_SESSION['msg_id'] = 5;
-            header("Location: ../pages/login.php");
+            header("Location: ../pages/avisoWrongPassLog.php");
+            exit();
         }
     } else {
         // email n cadastrado
-        $_SESSION['msg_id'] = 6;
-        header("Location: ../pages/login.php");
+        header("Location: ../pages/avisoNocad.php");
+        exit();
     }
 
     $stmt->close();
     $conn->close();
 }
+
+ob_end_flush();
+?>

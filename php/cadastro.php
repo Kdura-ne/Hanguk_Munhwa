@@ -1,4 +1,5 @@
 ﻿<?php
+ob_start();
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -10,13 +11,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($conn->query("SELECT userNick FROM user WHERE userNick = '$userName'")->num_rows > 0) {
         // esse username ja ta cadastrado
-        $_SESSION['msg_id'] = 1;
-        header("Location: ../pages/cad.php");
+        header("Location: ../pages/avisoUserExists.php");
         exit();
     }else if ($senha !== $confirm) {
         // as senhas nao coincidem
-        $_SESSION['msg_id'] = 2;
-        header("Location: ../pages/cad.php");
+        header("Location: ../pages/avisoWrongPass.php");
         exit();
     }else{
         $senha = password_hash($senha, PASSWORD_BCRYPT);
@@ -26,16 +25,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->execute();
         if ($stmt->affected_rows > 0) {
             // cadastro foiiii
-            $_SESSION['msg_id'] = 4;
-            header("Location: ../pages/login.php");
+            header("Location: ../index.php");
             $stmt->close();
             exit();
         } else {
             // erro ao cadastra :(
-            $_SESSION['msg_id'] = 3;
-            header("Location: ../pages/cad.php");
+            header("Location: ../pages/avisoErroCad.php");
             $stmt->close();
             exit();
         }
     }
 }
+ob_end_flush();
+?>

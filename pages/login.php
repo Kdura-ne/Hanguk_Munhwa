@@ -84,24 +84,6 @@
     <footer>
         <p>Kdura M. &copy; 2024</p>
     </footer>
-    <?php
-    if (isset($_SESSION['msg_id'])) {
-        switch ($_SESSION['msg_id']) {
-            case 5:
-                echo "<script>alert('Senha Incorreta.');</script>";
-                unset($_SESSION['msg_id']);
-                break;
-            case 6:
-                echo "<script>alert('Email não cadastrado.');</script>";
-                unset($_SESSION['msg_id']);
-                break;
-            case 7:
-                echo "<script>alert('Login realizado com sucesso!');</script>";
-                unset($_SESSION['msg_id']);
-                break;
-        }
-        unset($_SESSION['msg_id']);
-    } ?>
 
     <script src="../js/nav-dropdown.js"></script>
     <script src="../js/nav-hover.js"></script>
