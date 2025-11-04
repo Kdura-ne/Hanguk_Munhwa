@@ -2,14 +2,14 @@
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = trim($_POST['email']);
+    $userName = trim($_POST['username']);
     $senha = trim($_POST['senha']);
 
     require_once 'connexion.php';
 
-    $sql = "SELECT userId, userSenha FROM user WHERE userEmail = ?";
+    $sql = "SELECT userId, userSenha FROM user WHERE userNick = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $email);
+    $stmt->bind_param("s", $userName);
     $stmt->execute();
     $stmt->store_result();
 

@@ -4,12 +4,12 @@ session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require_once 'connexion.php';
     $nome = trim($_POST['nome']);
-    $email = trim($_POST['email']);
+    $userName = trim($_POST['nickname']);
     $senha = trim($_POST['senha']);
     $confirm = trim($_POST['confirmar-senha']);
 
-    if ($conn->query("SELECT userEmail FROM user WHERE userEmail = '$email'")->num_rows > 0) {
-        // esse email ja ta cadastrado
+    if ($conn->query("SELECT userNick FROM user WHERE userNick = '$userName'")->num_rows > 0) {
+        // esse username ja ta cadastrado
         $_SESSION['msg_id'] = 1;
         header("Location: ../pages/cad.php");
         exit();
@@ -20,9 +20,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }else{
         $senha = password_hash($senha, PASSWORD_BCRYPT);
-        $sql = "INSERT INTO user (userNome, userEmail, userSenha) VALUES (?, ?, ?)";
+        $sql = "INSERT INTO user (userNome, userNick, userSenha) VALUES (?, ?, ?)";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("sss", $nome, $email, $senha);
+        $stmt->bind_param("sss", $nome, $userName, $senha);
         $stmt->execute();
         if ($stmt->affected_rows > 0) {
             // cadastro foiiii

@@ -29,26 +29,29 @@ CREATE TABLE IF NOT EXISTS `quiz` (
   PRIMARY KEY (`quizId`),
   KEY `particId` (`particId`),
   CONSTRAINT `quiz_ibfk_1` FOREIGN KEY (`particId`) REFERENCES `user` (`userId`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Copiando dados para a tabela hangukmunhwa.quiz: ~3 rows (aproximadamente)
+-- Copiando dados para a tabela hangukmunhwa.quiz: ~5 rows (aproximadamente)
 REPLACE INTO `quiz` (`quizId`, `particId`, `quizData`, `quizScore`, `quizAnswers`) VALUES
 	(6, 4, '2025-11-03 05:02:04', 2, '{"q1":"d","q2":"c","q3":"a","q4":"a","q5":"a","q6":"b","q7":"a","q8":"a","q9":"b","q10":"c"}'),
 	(7, 5, '2025-11-03 05:04:56', 3, '{"q1":"a","q2":"c","q3":"c","q4":"b","q5":"a","q6":"a","q7":"c","q8":"c","q9":"b","q10":"b"}'),
-	(8, 6, '2025-11-03 05:07:17', 4, '{"q1":"c","q2":"b","q3":"c","q4":"d","q5":"a","q6":"b","q7":"c","q8":"a","q9":"c","q10":"c"}');
+	(8, 6, '2025-11-03 05:07:17', 4, '{"q1":"c","q2":"b","q3":"c","q4":"d","q5":"a","q6":"b","q7":"c","q8":"a","q9":"c","q10":"c"}'),
+	(9, 6, '2025-11-04 16:35:07', 2, '{"q1":"b","q2":"a","q3":"b","q4":"c","q5":"b","q6":"d","q7":"c","q8":"c","q9":"c","q10":"b"}'),
+	(10, 6, '2025-11-04 16:35:44', 3, '{"q1":"a","q2":"b","q3":"b","q4":"b","q5":"b","q6":"d","q7":"a","q8":"a","q9":"b","q10":"a"}'),
+	(11, 6, '2025-11-04 16:36:38', 10, '{"q1":"c","q2":"b","q3":"a","q4":"b","q5":"d","q6":"a","q7":"d","q8":"a","q9":"c","q10":"b"}');
 
 -- Copiando estrutura para tabela hangukmunhwa.user
 CREATE TABLE IF NOT EXISTS `user` (
   `userId` int NOT NULL AUTO_INCREMENT,
   `userNome` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `userEmail` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `userNick` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `userSenha` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`userId`),
-  UNIQUE KEY `userEmail` (`userEmail`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  UNIQUE KEY `userEmail` (`userNick`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Copiando dados para a tabela hangukmunhwa.user: ~3 rows (aproximadamente)
-REPLACE INTO `user` (`userId`, `userNome`, `userEmail`, `userSenha`) VALUES
+REPLACE INTO `user` (`userId`, `userNome`, `userNick`, `userSenha`) VALUES
 	(4, 'thor', 'gostosadaporra@gmail.com', '$2y$10$SEnciThCnFtwv1cBeN4UxeQn3qcqLXp8791DUHmRS2sgLnc5SPRU6'),
 	(5, 'amostradinho', 'mandaissoaqui@g', '$2y$10$fzKIJJaLuGhA.hZHe3HP9OIbq0MkWVwSAbBueENi7Vzy1qAWIMP.y'),
 	(6, 'asdas', 'potes@gmail.com', '$2y$10$J6PQFT9rMD4jHGf28prxaOSxvXVIjyonmiszxWVn9eg0Fvt8AMG6m');

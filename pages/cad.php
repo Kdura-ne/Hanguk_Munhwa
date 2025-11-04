@@ -68,8 +68,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="email">E-mail / 이메일</label>
-                    <input type="email" id="email" name="email" required placeholder="seu@email.com">
+                    <label for="nickname">Nome de usuário / 사용자 이름</label>
+                    <input type="text" id="nickname" name="nickname" required placeholder="Digite seu nome de usuário">
                 </div>
 
                 <div class="form-group">
@@ -98,7 +98,7 @@
     if (isset($_SESSION['msg_id'])) {
         switch ($_SESSION['msg_id']) {
             case 1:
-                echo "<script>alert('Email já cadastrado.');</script>";
+                echo "<script>alert('User já cadastrado.');</script>";
                 break;
             case 2:
                 echo "<script>

@@ -63,8 +63,8 @@
 
             <form class="signup-form" action="../php/logar.php" method="POST">
                 <div class="form-group">
-                    <label for="email">E-mail / 이메일</label>
-                    <input type="email" id="email" name="email" required placeholder="seu@email.com">
+                    <label for="username">Nome de usuário / 사용자 이름</label>
+                    <input type="text" id="username" name="username" required placeholder="Seu nome de usuário">
                 </div>
 
                 <div class="form-group">
