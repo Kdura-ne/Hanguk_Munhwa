@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     } else {
         // email n cadastrado
-        header("Location: ../pages/avisoNocad.php");
+        header("Location: ../pages/avisoNoCad.php");
         exit();
     }
 

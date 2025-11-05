@@ -2,12 +2,19 @@
 ob_start();
 session_start();
 
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require_once 'connexion.php';
     $nome = trim($_POST['nome']);
     $userName = trim($_POST['nickname']);
     $senha = trim($_POST['senha']);
     $confirm = trim($_POST['confirmar-senha']);
+
+    if (mb_strlen($senha) < 6) {
+    $_SESSION['Error'] = 'A senha deve ter pelo menos 6 caracteres.';
+    header('Location: ../pages/avisoSenha6.php');
+    exit;
+    }
 
     if ($conn->query("SELECT userNick FROM user WHERE userNick = '$userName'")->num_rows > 0) {
         // esse username ja ta cadastrado
