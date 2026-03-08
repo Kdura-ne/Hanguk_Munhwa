@@ -11,6 +11,7 @@ O site está atualmente em estado provisório, mas passará por atualizações f
 
 (3 de novembro de 2025)
 
+## PROJETO DESATUALIZADO, CASO QUEIRA VER ATUALIZAÇÕES, VÁ PARA -> "https://github.vom/Kdura-ne/hanguk_munhwa2.0" - (08 de Março de 2025)
 ---
 
 ## PWII 과목 과제 및 CECSP 동영상 공모전 참가
@@ -24,3 +25,5 @@ O site está atualmente em estado provisório, mas passará por atualizações f
 사이트는 현재 임시로 완성된 상태이지만 향후 업데이트가 있을 예정입니다(사용자가 퀴즈를 한 번만 풀 수 있도록 하고, 추가할 내용이 생기면 업데이트할 계획입니다).
 
 (2025년 11월 3일)
+
+## 이 프로젝트는 오래되었습니다. 업데이트를 보려면 다음 링크를 방문하세요. -> "https://github.vom/Kdura-ne/hanguk_munhwa2.0" - (08 de Março de 2025)
